@@ -40,8 +40,6 @@ public class GuessingGame {
 				System.out.println("You are correct!");
 				System.out.println("You guessed incorrectly " + numtry + " times.");
 			}
-			// this will close the scanner
-			scanner.close();
 			// This will ask you to play again and will redo the game if you say yes
 			System.out.println("Play again?");
 			String yesno = scanner.nextLine();
@@ -50,10 +48,13 @@ public class GuessingGame {
 			}
 			else {
 				stillPlaying = false;
+				scanner.close(); // this will close the scanner
+
 			}
+			
 		}
+		
 	}
-	
 
 
 	public static void main(String[] args) {
