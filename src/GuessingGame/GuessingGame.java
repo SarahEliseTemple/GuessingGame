@@ -18,11 +18,12 @@ public class GuessingGame {
 			Scanner scanner = new Scanner(System.in);
 			int guess = -1;
 			int numtry = 0;
+			// This is where the bulk of the game happens. 
 			while (guess != randomNum) {
 				String input = scanner.nextLine();
 				System.out.println("You typed: " + input);
+				// this will turn guess into an int so it can be compared to the randomNum
 				guess = Integer.parseInt(input);
-				System.out.println(guess);
 				if (guess < randomNum) {
 					System.out.println("Your guess is less than the random number.");
 					System.out.println("Try again!");
@@ -34,10 +35,14 @@ public class GuessingGame {
 					numtry = numtry + 1;
 				}
 			}
+			// getting it correct is here
 			if (guess == randomNum){
 				System.out.println("You are correct!");
 				System.out.println("You guessed incorrectly " + numtry + " times.");
 			}
+			// this will close the scanner
+			scanner.close();
+			// This will ask you to play again and will redo the game if you say yes
 			System.out.println("Play again?");
 			String yesno = scanner.nextLine();
 			if (yesno.equals("yes") || yesno.equals("y") ) {
