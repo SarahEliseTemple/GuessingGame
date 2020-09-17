@@ -11,11 +11,10 @@ public class GuessingGame {
 	
 	public GuessingGame() {
 		boolean stillPlaying = true;
-		
+		Scanner scanner = new Scanner(System.in);
 		while (stillPlaying== true) {
 			System.out.println("I am thinking of a number between 0 and 50. Type your best guess below and I will tell you if it is too high or low.");
 			int randomNum = (int) (Math.random() * 51);
-			Scanner scanner = new Scanner(System.in);
 			int guess = -1;
 			int numtry = 0;
 			// This is where the bulk of the game happens. 
@@ -49,11 +48,8 @@ public class GuessingGame {
 			else {
 				stillPlaying = false;
 				scanner.close(); // this will close the scanner
-
 			}
-			
 		}
-		
 	}
 
 
